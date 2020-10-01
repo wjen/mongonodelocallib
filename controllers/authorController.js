@@ -61,7 +61,7 @@ exports.author_create_post = [
     (req, res, next) => {
 
         // Extract the validation errors from a request.
-        const errors = validator.validationResult(req);
+        const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
             // There are errors. Render form again with sanitized values/errors messages.

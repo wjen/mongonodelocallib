@@ -20,7 +20,7 @@ var mongoose = require('mongoose');
 
 //Set up default mongoose connection
 var dev_db_url = 'mongodb+srv://' + process.env.API_USER + '@cluster0.up95y.mongodb.net/local_library?retryWrites=true&w=majority'
-var mongoDB = process.env.MONGODB_URI || dev_db_url;
+var mongoDB = dev_db_url || process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 
 //Get the default connection
